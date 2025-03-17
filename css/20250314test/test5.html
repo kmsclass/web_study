@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+ </head>
+<body>
+<h2>납품 대장</h2>
+<form method="post" name="supplyFrm" action="#">
+    <fieldset>
+        <legend>납품자 정보</legend>
+        <label for="supply_name">1. 납품자명 : </label>
+        <input type="text" id="supply_name"
+        name="supply_name" placeholder="name">
+        <br>
+        <label for="email">2. email :</label>
+        <input type="email" id="email"
+        name="email" placeholder="hkd@naver.com">
+    </fieldset>
+    <fieldset>
+        <legend>납품 정보</legend>
+        <ul>
+            <li>
+                <label for="product_name">상품명 : </label>
+                <input type="text" id="product_name" name="product_name">
+            </li>
+            <li>
+                <label for="product_num">납품수량</label>
+                <input type="number" placeholder="최소 100" min="100"
+                id="product_num" name="product_num">
+            </li>
+            <li>
+                <label for="product_level">납품 등급 : </label>
+                <input type="range" id="product_level"
+                name="product_level" value="5" min="1" max="10">
+            </li>
+            <li>    
+                <label for="product_etc">기타사항 : </label>
+                <textarea name="product_etc" id="product_etc"
+                style="resize: none;"></textarea>
+            </li>
+        </ul>
+    </fieldset>
+    <input type="submit" value="send message">
+</form>
+</body></html>
