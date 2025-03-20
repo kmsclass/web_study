@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+</head>
+<body>
+	<h1> 행 열 갯수 각각 입력받아 테이블 만들기 </h1>
+    <P>
+        행:<input type="text" id="row">
+        열:<input type="text" id="col">
+    </P>
+    <button onclick="makeTable();">테이블 생성</button>
+	<div id="box"></div>
+	<script>
+    	function makeTable(){
+            const row = document.querySelector("#row").value;
+            const col = document.querySelector("#col").value;
+
+            let count = 1; // 각 셀마다 순차적으로 1씩 증가된 숫자를 넣기 위해 임의로 만든 변수 
+
+            // document.write로 출력할 문구(table요소) 작업 ---------------------
+            let table = '<table border="1">';
+            for(let i = 0; i<row; i++){ // 사용자가 입력한 행 수만큼의 <tr>요소를 만들기위한 for문
+                table += '<tr>';
+                for(let j=0; j<col; j++){ // 각 행 마다 사용자가 입력한 열 수만큼의 <td>요소를 만들기 위한 for문
+                    table += '<td width="50" height="50">' + count++ + '</td>';
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            // ----------------------------------------------------------------
+
+            document.querySelector("#box").innerHTML = table; 
+    	}
+	</script>
+	
+	
+</body>
+</html>
