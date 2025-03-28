@@ -17,7 +17,6 @@
 
     <script>
         function test(){
-
             const data = {
                 name:"홍길동",
                 age:23,
@@ -28,6 +27,8 @@
             };
 
             const ulEl = document.querySelector("div.list-data>ul");
+            //data : 객체. 
+            // 홍길동 <=  data["name"]
             for(let key in data){
                 ulEl.innerHTML += "<li>" + key + " : " + data[key] + "</li>";
             }

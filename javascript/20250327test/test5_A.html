@@ -32,26 +32,28 @@
                            new Board(3, "세번째", "유저3"),
                            new Board(4, "네번째", "유저4")];
 
-        function test1(){
-            
-            const divEl = document.getElementById("data-table");
-
-            let tableEl = document.createElement("table");
-            tableEl.border = "1";
+        function test1(){            
+            const divEl = document.getElementById("data-table"); //객체 출력 영역
+            let tableEl = document.createElement("table"); //<table></table>
+            tableEl.border = "1";  //<table border="1"></table>
 
             boardList.forEach(function(boardObj){
-
-                let trEl = document.createElement("tr");
+                //boardObj : new Board(2, "두번째", "유저2",Date)
+                let trEl = document.createElement("tr"); //<tr></tr>
                 for(let key in boardObj){
-                    let tdEl = document.createElement("td");
-                    tdEl.appendChild(document.createTextNode(boardObj[key]));
-                    trEl.appendChild(tdEl);
+                    let tdEl = document.createElement("td");//<td></td>
+                    tdEl.appendChild(document.createTextNode(boardObj[key])); //<td>2<td>
+                    trEl.appendChild(tdEl);//<tr><td>2</td></tr>
                 }
+              //<table border="1">
+              // <tr><td>1</td><td>첫번째</td><td>유저1</td><td>Date객체<td></tr>
+              // <tr><td>2</td><td>두번째</td><td>유저2</td><td>Date객체<td></tr>
+              // ... 
+              // </table>
                 tableEl.appendChild(trEl);
             });
 
-            divEl.appendChild(tableEl);
-
+            divEl.appendChild(tableEl);  //화면 출력
         }
     </script>
 <hr>    
@@ -74,10 +76,12 @@
             let boardTitle = document.getElementById("boardTitle").value;
             let boardWriter = document.getElementById("boardWriter").value;
             let boardDateArr = document.getElementById("boardDate").value.split("-");
+            //document.getElementById("boardDate").value : yyyy-mm-dd 형식
+            //boardDateArr[0] : 년도
+            //boardDateArr[1] : 월
+            //boardDateArr[2] : 일
             let boardDate = new Date(boardDateArr[0], boardDateArr[1]-1, boardDateArr[2]);
-
             let boardObj = new Board(boardNo, boardTitle, boardWriter, boardDate);
-
             boardList.push(boardObj);
 
             console.log(boardList);
@@ -90,9 +94,7 @@
                 tdEl.appendChild(document.createTextNode(boardObj[key]));
                 trEl.appendChild(tdEl);
             }
-
             tableEl.appendChild(trEl);
-
         }
     </script>
 

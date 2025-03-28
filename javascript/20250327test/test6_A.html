@@ -14,8 +14,9 @@
     <div id="text-container"></div>
     <script>
         function test12(){
-            const inputEl = window.event.target;
-            document.getElementById("text-container").innerHTML = "글자 : " + inputEl.value + "<br>글자수 : " + inputEl.value.length;
+            const inputEl = window.event.target; //이벤트가 발생된 노드.
+            document.getElementById("text-container").innerHTML = 
+              "글자 : " + inputEl.value + "<br>글자수 : " + inputEl.value.length;
         }
     </script>
 
